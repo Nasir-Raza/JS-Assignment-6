@@ -8,46 +8,70 @@
 // 6. user have 3 life to find the word
 // 7. if user is input the correct word it will win other wise game Over after 3 attempts.
 
+function randomWord() {
 
-
-var letterArray = [];
-var alphabetsArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ];
-var userName = "";
-var randomString = "";
-var message = "";
-let count = 0;
-
-do{
-    userName = prompt("Enter user name");
-    randomWord();
-    count++;
-    
-}while( count < 3);
-
-alert(message);
-
-function randomWord(){
-    var bigDecimal = 0;
+    var randomString = "";
+    var alphabetsArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    var max = 6, min = 3;
     var indexNum = 0;
+    var indexNum1 = 0;
 
-    for (var i = 0; i < userName.length; i++) {
-        bigDecimal = Math.random();
-        indexNum = Math.floor(bigDecimal * 25);
-        randomString += alphabetsArray[indexNum];
+    // Between any two numbers i.e. 6 and 3
+    indexNum = Math.floor(Math.random() * (max - min + 1)) + min;
+    console.log(indexNum);
+
+    max = 25;
+
+    for (var i = 0; i < indexNum; i++) {
+
+        // Between 0 and max i.e. 0 and 25
+        indexNum1 = Math.floor(Math.random() * (max + 1));
+        console.log(indexNum1);
+        randomString += alphabetsArray[indexNum1];
     }
+    console.log(alphabetsArray);
+    console.log("Rondom word generated in randomWord function: ", randomString);
 
-    letterArray.push(randomString);
-    randomString = "";
-    console.log("User name converted to lower case: ", userName.toLowerCase());
-    console.log(letterArray);
-    
-    
-    for (var i = 0; i < letterArray.length; i++) {
-        if (letterArray[i] === userName.toLowerCase()){
-            message = "You have won!. Input user name is matched";
-            break;           
-        } else {
-            message = "Game over!. Input user name is not matched";
+    // Calling matchUserName function with two arguments
+    matchUserName(indexNum, randomString);
+}
+
+function matchUserName(indNum, randString) {
+
+    var userName = "";
+    let counter = 0;
+
+    console.log("Index number received from randomWord function: ", indNum);
+    console.log("Rondom word received from randomWord function: ", randString);
+
+    do {
+        userName = prompt("Please enter string of " + indNum + " characters long for matching the random word");
+
+        if (userName === null) {
+            break;
+        }
+        else {
+            if (userName === "") {
+                alert("Please enter valid string to match with the random word");
+            }
+            else {
+                console.log("Input user name converted to lower case: ", userName.toLowerCase());
+
+                if (randString === userName.toLowerCase()) {
+                    alert("Input user name is matched. Congratulations! you have won the game");
+                    break;
+                }
+                else {
+                    if (counter < 2) {
+                        alert("Input user name is not matched. You have " + (2 - counter) + " more chance. Sorry! please try again");
+                    }
+                    else {
+                        alert("Input user name is not matched. Hard luck! Game is over");
+                    }
+                }
+                counter++;
+            }
         }
     }
+    while (counter < 3);
 }

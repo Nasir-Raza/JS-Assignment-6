@@ -8,12 +8,21 @@
 
 <head>
     <title>
-        Math.Random funtion
+        Random Words Generation
     </title>
+    <link rel="stylesheet" href="./index.css">
 </head>
 
 <body>
-    <button id="genrandword" onclick="randomWord()">Generate Random Word</button>
+    <div id="main" class="main">
+        <label class="main">Lets play the game of random word generation and guessing the generated word in three attempts</label>
+     </div>
+    <div id="submain" class="submain">
+        <label class="submain">Step 1: Click on the button to generate random word</label>
+        <button id="genrandword" onClick="randomWord()">Generate Random Word</button>    
+    </div>
+    <div id="step2"></div>
+    <div id="result"></div>
     <script src="./app.js"></script>
 </body>
 

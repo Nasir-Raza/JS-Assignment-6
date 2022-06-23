@@ -1,0 +1,89 @@
+/* Coded by 
+	 Name	: Nasir Raza
+	 Roll #	: KH01210813250
+*/
+
+div.main {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 15px;
+    margin-left: 20%;
+    margin-right: 20%;
+    width: 60%;
+    height: auto;
+    border: solid 2px green;
+    background-color: yellow;
+    color: blue;   
+    text-align: center; 
+}
+
+div.submain {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 15px;
+    margin-left: 20%;
+    margin-right: 20%;
+    width: 60%;
+    height: auto;
+    border: solid 2px blue;
+    background-color:azure;   
+    text-align: center; 
+}
+
+div.success {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 15px;
+    margin-left: 20%;
+    margin-right: 20%;
+    width: 60%;
+    height: auto;
+    border: solid 2px green;
+    color: darkblue;
+    background-color:limegreen;   
+    text-align: center; 
+}
+
+div.failure {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 15px;
+    margin-left: 20%;
+    margin-right: 20%;
+    width: 60%;
+    height: auto;
+    border: solid 2px green;
+    color:white;
+    background-color: rgba(255, 0, 0, 0.739);   
+    text-align: center; 
+}
+
+input {
+    width: 50%;
+    height: 26px;
+    font-size: large;
+}
+
+button#genrandword {
+    margin-left: 1% ;
+    margin-right:1% ;
+    width: 250px;
+    height: 32px;
+    font-size: large;
+}
+
+button {
+    margin-left: 1% ;
+    margin-right:1% ;
+    width: 100px;
+    height: 32px;
+    font-size: large;
+}
+
+label.main {
+    font-size: xx-large;
+}
+
+label.submain {
+    font-size: x-large;
+}
